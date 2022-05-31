@@ -1,0 +1,52 @@
+{
+    "name": "on-the-fly-configurator/laravel-plugin",
+    "description": "Integration of On The Fly to your eCommerce website. This allows users to navigate from OTF to the eCommerce cart with the OTF plugins added to their cart.",
+    "type": "laravel-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "laravel",
+        "cms",
+        "laravel-plugin",
+        "ontheflyintegration"
+    ],
+    "support": {
+        "docs": "https://dev.ontheflyconfigurator.com/docs",
+        "issues": "https://github.com/on-the-fly-configurator/craft-plugin/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sugar Rush",
+            "homepage": "https://wearesugarrush.co"
+        }
+    ],
+    "require": {
+        "php": "^8.0.2",
+        "guzzlehttp/guzzle": "^7.2",
+        "laravel/framework": "^9.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "OnTheFlyConfigurator\\LaravelPlugin\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "On The Fly Laravel Integration",
+        "developer": "Sugar Rush",
+        "developerUrl": "https://wearesugarrush.co",
+        "class": "OnTheFlyConfigurator\\LaravelPlugin",
+        "laravel": {
+            "providers": [
+                "OnTheFlyConfigurator\\LaravelPlugin\\LaravelPluginServiceProvider.php"
+            ]
+        }
+    },
+    "scripts": {
+        "post-package-install": [
+            "@php artisan vendor:publish --tag=ontheflyconfigurator-config --force"
+        ],
+        "post-package-update": [
+            "@php artisan vendor:publish --tag=ontheflyconfigurator-config --force"
+        ]
+    }
+}
