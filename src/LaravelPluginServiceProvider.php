@@ -13,9 +13,4 @@ class LaravelPluginServiceProvider extends ServiceProvider
             __DIR__.'/config/config.php', 'ontheflyconfigurator'
         );
     }
-
-    public function boot()
-    {
-
-    }
 }
